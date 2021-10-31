@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App name='Mern stack Developer'/>
   </React.StrictMode>,
   document.getElementById('root')
 );
