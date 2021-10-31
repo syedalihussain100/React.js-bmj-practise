@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import './App.css';
 // import One from './component/One';
 //import Two from './component/Two';
-import MultipleReturn from './component/MultipleReturn';
+//import MultipleReturn from './component/MultipleReturn';
+import Hoc from './component/Hoc';
 
 export class App extends Component {
   constructor(props) {
@@ -45,7 +46,8 @@ export class App extends Component {
         {/* <One name='hammad' /> */}
         {/* <button onClick={() => this.setState({ count: this.state.count + 1 })}>Click Increment</button> */}
         {/* <Two/> */}  
-        <MultipleReturn />
+        {/* <MultipleReturn /> */}
+        <Hoc/>
       </div>
     )
   }
