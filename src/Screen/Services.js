@@ -8,8 +8,10 @@ function Services() {
         e.preventDefault();
         if (person.firstname && person.lastname && person.email) {
             const newPerson = { ...person, id: new Date().getTime().toString() };
-            setPeople({ ...people, newPerson });
-           console.log(newPerson)
+            setPeople([...people, newPerson]);
+            console.log(people);
+            setPerson({ firstname: '', lastname: '', email: '' });
+            localStorage.setItem('newPerson', JSON.stringify(people))
         } else {
             alert('Please Submit The Form!')
         }
@@ -21,7 +23,7 @@ function Services() {
         setPerson({ ...person, [name]: value });
     }
     return (
-        <div>
+        <div style={{ textAlign: 'center' }}>
             <h2>React.Js Form State</h2>
             <br />
             <form onSubmit={handleSubmit}>
@@ -38,6 +40,19 @@ function Services() {
                 />
                 <button type='submit'>Form Submit</button>
             </form>
+
+            <br /> <br />
+            <h1>Form Display</h1>
+            {
+                people.map((data) => {
+                    const { firstname, lastname, email, id } = data
+                    return <div key={id}>
+                        <h1>{firstname}</h1>
+                        <h3>{lastname}</h3>
+                        <p>{email}</p>
+                    </div>
+                })
+            }
         </div>
     )
 }
